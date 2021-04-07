@@ -1,4 +1,4 @@
-import { Image, Flex } from "@chakra-ui/react";
+import { Image, Flex, useBreakpointValue } from "@chakra-ui/react";
 
 export function Header() {
   return (

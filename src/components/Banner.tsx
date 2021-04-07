@@ -1,22 +1,29 @@
-import { Flex, Image } from "@chakra-ui/react";
+import { Flex, Image, useBreakpointValue } from "@chakra-ui/react";
 
 export function Banner() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true
+  })
   return (
     <Flex
       w="100%"
-      bg="dark.1000"
+      bg="dark.100"
       pos="relative"
       justify="center"
     >
       <Image src="/banner.svg" alt="Banner" />
 
-      <Image maxH="270"
-        position="absolute"
-        right="140"
-        mt="60px"
-        src="/airplane.svg" alt="Airplane" 
-        transform="rotate(5deg)"
-      />
+      {isWideVersion && (
+        <Image maxH="270"
+          position="absolute"
+          right="120"
+          mt="15px"
+          src="/airplane.svg" alt="Airplane" 
+          transform="rotate(5deg)" 
+          
+        />
+      )}
        
     </Flex>
   )
